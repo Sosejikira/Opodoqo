@@ -1,6 +1,3 @@
--- Credits
---local Owner = 'Sosejikira#4993'
-
 -- Functions
 function Appellation(...)
 	local Letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}
@@ -29,7 +26,7 @@ end
 local Perception = {}
 function Perception:Establish()
 	local Window = {}
-	local Informations = {Name = Appellation(6, 12)}
+	local Informations = {Name = Appellation(math.random(6, 12))}
 	local mURdTjpg = Instance.new('ScreenGui', game:GetService('CoreGui'))
 	mURdTjpg.Name = Informations.Name
 	mURdTjpg.IgnoreGuiInset = false
@@ -135,6 +132,11 @@ function Perception:Establish()
 				repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil
 				Heartbeat:Disconnect() bDwhXOfI:Destroy()
 			end)
+		end
+	end
+	function Window:ClearWindow()
+		for _, Object in pairs(mURdTjpg:GetChildren()) do
+			Object:Destroy()
 		end
 	end
 	return Window

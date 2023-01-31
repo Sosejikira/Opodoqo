@@ -1,0 +1,139 @@
+-- Functions
+function Appellation(...)
+	local Letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}
+	local Numbers = {'1','2','3','4','5','6','7','8','9','0'}
+
+	local Name = ''
+	for _ = 1, (...) do
+		if math.random(1, 2) == 1 then
+			if math.random(1, 2) == 1 then
+				Name = Name..string.lower(Letters[math.random(1, #Letters)])
+			else
+				Name = Name..Letters[math.random(1, #Letters)]
+			end
+		else
+			Name = Name..string.lower(Numbers[math.random(1, #Numbers)])
+		end
+	end
+
+	return Name
+end
+function Roundify(...)
+	local Parameters = {...}
+	return tonumber(string.format("%."..(Parameters[2] or 0).."f", Parameters[1]))
+end
+
+local Perception = {}
+function Perception:Establish()
+	local Window = {}
+	local Informations = {Name = Appellation(6, 12)}
+	local mURdTjpg = Instance.new('ScreenGui', game:GetService('CoreGui'))
+	mURdTjpg.Name = Informations.Name
+	mURdTjpg.IgnoreGuiInset = false
+	mURdTjpg.ResetOnSpawn = false
+	function Window:AddObject(Arguments)
+		if Arguments.Object then
+			local bDwhXOfI = Instance.new('ImageLabel', mURdTjpg)
+			bDwhXOfI.Name = Appellation(math.random(2, 14))
+			bDwhXOfI.AnchorPoint = Vector2.new(.5, .5)
+			bDwhXOfI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			bDwhXOfI.BackgroundTransparency = 1
+			bDwhXOfI.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			bDwhXOfI.BorderSizePixel = 0
+			bDwhXOfI.Position = UDim2.new(0, 0, 0, 0)
+			bDwhXOfI.Size = UDim2.new(0, 12, 0, 12)
+			bDwhXOfI.ZIndex = Arguments.Order or 2
+			bDwhXOfI.Image = 'rbxassetid://8322146497'
+			bDwhXOfI.ImageColor3 = Arguments.Color or Color3.fromRGB(100, 100, 100)
+			bDwhXOfI.ImageRectOffset = Vector2.new(24, 0)
+			bDwhXOfI.ImageRectSize = Vector2.new(12, 12)
+			local ojbuASYW = Instance.new('ImageLabel', bDwhXOfI)
+			ojbuASYW.Name = Appellation(math.random(2, 14))
+			ojbuASYW.AnchorPoint = Vector2.new(.5, .5)
+			ojbuASYW.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			ojbuASYW.BackgroundTransparency = 1
+			ojbuASYW.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			ojbuASYW.BorderSizePixel = 0
+			ojbuASYW.Position = UDim2.new(.5, 0, .5, 0)
+			ojbuASYW.Size = UDim2.new(1, 2, 1, 2)
+			ojbuASYW.ZIndex = -2
+			ojbuASYW.Image = 'rbxassetid://8322146497'
+			ojbuASYW.ImageColor3 = Color3.fromRGB(0, 0, 0)
+			ojbuASYW.ImageRectOffset = Vector2.new(24, 0)
+			ojbuASYW.ImageRectSize = Vector2.new(12, 12)
+			local dTAdTTXQ = Instance.new('TextLabel', bDwhXOfI)
+			dTAdTTXQ.Name = Appellation(math.random(2, 14))
+			dTAdTTXQ.AnchorPoint = Vector2.new(.5, 1)
+			dTAdTTXQ.AutomaticSize = Enum.AutomaticSize.X
+			dTAdTTXQ.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			dTAdTTXQ.BackgroundTransparency = 1
+			dTAdTTXQ.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			dTAdTTXQ.BorderSizePixel = 0
+			dTAdTTXQ.Position = UDim2.new(.5, 0, 0, -2)
+			dTAdTTXQ.Size = UDim2.new(0, 12, 0, 14)
+			dTAdTTXQ.ZIndex = 0
+			dTAdTTXQ.Font = Enum.Font.Gotham
+			dTAdTTXQ.Text = Arguments.Name or 'Unkown'
+			dTAdTTXQ.TextColor3 = Color3.fromRGB(250, 250, 250)
+			dTAdTTXQ.TextScaled = false
+			dTAdTTXQ.TextSize = 14
+			dTAdTTXQ.TextStrokeColor3 = Color3.new(0, 0, 0)
+			dTAdTTXQ.TextStrokeTransparency = 1
+			dTAdTTXQ.TextWrapped = false
+			dTAdTTXQ.TextXAlignment = Enum.TextXAlignment.Center
+			dTAdTTXQ.TextYAlignment = Enum.TextYAlignment.Bottom
+			local MJejMQbA = Instance.new('UIStroke', dTAdTTXQ)
+			MJejMQbA.Name = Appellation(math.random(2, 14))
+			MJejMQbA.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			MJejMQbA.Color = Color3.fromRGB(0, 0, 0)
+			MJejMQbA.LineJoinMode = Enum.LineJoinMode.Round
+			MJejMQbA.Thickness = 1
+			local nZRqlexX = Instance.new('TextLabel', bDwhXOfI)
+			nZRqlexX.Name = Appellation(math.random(2, 14))
+			nZRqlexX.AnchorPoint = Vector2.new(.5, 0)
+			nZRqlexX.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+			nZRqlexX.BackgroundTransparency = 1
+			nZRqlexX.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			nZRqlexX.BorderSizePixel = 0
+			nZRqlexX.Position = UDim2.new(.5, 0, 1, 2)
+			nZRqlexX.Size = UDim2.new(0, 200, 0, 14)
+			nZRqlexX.ZIndex = 0
+			nZRqlexX.Font = Enum.Font.Gotham
+			nZRqlexX.Text = Appellation(2, 4)
+			nZRqlexX.TextColor3 = Color3.fromRGB(250, 250, 250)
+			nZRqlexX.TextScaled = false
+			nZRqlexX.TextSize = 12
+			nZRqlexX.TextStrokeColor3 = Color3.new(0, 0, 0)
+			nZRqlexX.TextStrokeTransparency = 1
+			nZRqlexX.TextWrapped = false
+			nZRqlexX.TextXAlignment = Enum.TextXAlignment.Center
+			nZRqlexX.TextYAlignment = Enum.TextYAlignment.Top
+			local MJejMQbA = Instance.new('UIStroke', nZRqlexX)
+			MJejMQbA.Name = Appellation(2, 14)
+			MJejMQbA.ApplyStrokeMode = Enum.ApplyStrokeMode.Contextual
+			MJejMQbA.Color = Color3.fromRGB(0, 0, 0)
+			MJejMQbA.LineJoinMode = Enum.LineJoinMode.Round
+			MJejMQbA.Thickness = 1
+			spawn(function()
+				local Heartbeat = game:GetService('RunService').Heartbeat:Connect(function()
+					if Arguments.Object then ------------------------------------------------------------------------------------------------------------------------------
+						local Position, Visible = game:GetService('Workspace')['CurrentCamera']:WorldToScreenPoint(Arguments.Object.Position)
+						if Visible then
+							bDwhXOfI.Visible = true
+							bDwhXOfI.Position = UDim2.new(0, Position.X, 0, Position.Y)
+							nZRqlexX.Text = Roundify(tostring((game:GetService('Workspace')['CurrentCamera'].CFrame.Position - Arguments.Object.Position).Magnitude))
+						else
+							bDwhXOfI.Visible = false
+						end
+					else
+						return
+					end
+				end)
+				repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil
+				Heartbeat:Disconnect() bDwhXOfI:Destroy()
+			end)
+		end
+	end
+	return Window
+end
+return Perception

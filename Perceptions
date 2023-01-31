@@ -1,3 +1,6 @@
+-- Credits
+--local Owner = 'Sosejikira#4993'
+
 -- Functions
 function Appellation(...)
 	local Letters = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}
@@ -116,7 +119,7 @@ function Perception:Establish()
 			MJejMQbA.Thickness = 1
 			spawn(function()
 				local Heartbeat = game:GetService('RunService').Heartbeat:Connect(function()
-					if Arguments.Object then ------------------------------------------------------------------------------------------------------------------------------
+					if Arguments.Object then
 						local Position, Visible = game:GetService('Workspace')['CurrentCamera']:WorldToScreenPoint(Arguments.Object.Position)
 						if Visible then
 							bDwhXOfI.Visible = true

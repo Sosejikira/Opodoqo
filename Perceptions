@@ -140,8 +140,10 @@ function Perception:Establish()
 						return
 					end
 				end)
-				repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil
-				Heartbeat:Disconnect() bDwhXOfI:Destroy()
+				if typeof(Arguments.Object) == 'Instance' then
+					repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil
+					Heartbeat:Disconnect() bDwhXOfI:Destroy()
+				end
 			end)
 		end
 	end

@@ -27,7 +27,7 @@ local Perception = {}
 function Perception:Establish()
 	local Window = {}
 	local Informations = {Name = Appellation(math.random(6, 12))}
-	local mURdTjpg = Instance.new('ScreenGui', game:GetService('CoreGui'))
+	local mURdTjpg = Instance.new('ScreenGui', game:GetService('Players')['LocalPlayer']['PlayerGui']) --Instance.new('ScreenGui', game:GetService('CoreGui'))
 	mURdTjpg.Name = Informations.Name
 	mURdTjpg.IgnoreGuiInset = false
 	mURdTjpg.ResetOnSpawn = false
@@ -117,13 +117,24 @@ function Perception:Establish()
 			spawn(function()
 				local Heartbeat = game:GetService('RunService').Heartbeat:Connect(function()
 					if Arguments.Object then
-						local Position, Visible = game:GetService('Workspace')['CurrentCamera']:WorldToScreenPoint(Arguments.Object.Position)
-						if Visible then
-							bDwhXOfI.Visible = true
-							bDwhXOfI.Position = UDim2.new(0, Position.X, 0, Position.Y)
-							nZRqlexX.Text = Roundify(tostring((game:GetService('Workspace')['CurrentCamera'].CFrame.Position - Arguments.Object.Position).Magnitude))
-						else
-							bDwhXOfI.Visible = false
+						if typeof(Arguments.Object) == 'Vector3' then
+							local Position, Visible = game:GetService('Workspace')['CurrentCamera']:WorldToScreenPoint(Arguments.Object)
+							if Visible then
+								bDwhXOfI.Visible = true
+								bDwhXOfI.Position = UDim2.new(0, Position.X, 0, Position.Y)
+								nZRqlexX.Text = Roundify(tostring((game:GetService('Workspace')['CurrentCamera'].CFrame.Position - Arguments.Object).Magnitude))
+							else
+								bDwhXOfI.Visible = false
+							end
+						elseif typeof(Arguments.Object) == 'Instance' then
+							local Position, Visible = game:GetService('Workspace')['CurrentCamera']:WorldToScreenPoint(Arguments.Object.Position)
+							if Visible then
+								bDwhXOfI.Visible = true
+								bDwhXOfI.Position = UDim2.new(0, Position.X, 0, Position.Y)
+								nZRqlexX.Text = Roundify(tostring((game:GetService('Workspace')['CurrentCamera'].CFrame.Position - Arguments.Object.Position).Magnitude))
+							else
+								bDwhXOfI.Visible = false
+							end
 						end
 					else
 						return

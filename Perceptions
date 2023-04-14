@@ -27,7 +27,7 @@ local Perception = {}
 function Perception:Establish()
 	local Window = {}
 	local Informations = {Name = Appellation(math.random(6, 12))}
-	local mURdTjpg = Instance.new('ScreenGui', game:GetService('Players')['LocalPlayer']['PlayerGui']) --Instance.new('ScreenGui', game:GetService('CoreGui'))
+	local mURdTjpg = Instance.new('ScreenGui', game:GetService('CoreGui'))
 	mURdTjpg.Name = Informations.Name
 	mURdTjpg.IgnoreGuiInset = false
 	mURdTjpg.ResetOnSpawn = false
@@ -141,17 +141,21 @@ function Perception:Establish()
 					end
 				end)
 				if typeof(Arguments.Object) == 'Instance' then
-					repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil
+					repeat wait(.25) until Arguments.Object == nil or Arguments.Object.Parent == nil or bDwhXOfI == nil or bDwhXOfI.Parent == nil
 					Heartbeat:Disconnect() bDwhXOfI:Destroy()
 				end
 			end)
+			return bDwhXOfI
 		end
 	end
-	function Window:ClearWindow()
+	function Window:Clear()
 		for _, Object in pairs(mURdTjpg:GetChildren()) do
 			Object:Destroy()
 		end
 	end
-	return Window
+	function Window:Destroy()
+        mURdTjpg:Destroy()
+    end
+    return Window
 end
 return Perception
